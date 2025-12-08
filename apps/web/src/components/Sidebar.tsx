@@ -16,9 +16,9 @@ import {
 import { useState, useEffect } from 'react';
 import { SearchModal } from './SearchModal';
 import { Link, useRouter } from '@/navigation';
-import { useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { RecommendationsModal } from './RecommendationsModal';
 import { SettingsPanel } from './SettingsPanel';
 import { API_URL } from '@/config';
@@ -44,6 +44,7 @@ export function Sidebar() {
   const tProfile = useTranslations('Profile');
   const tCommon = useTranslations('Common');
   const router = useRouter();
+  const locale = useLocale();
 
   // Fetch lists & Check Auth
   const fetchLists = () => {
@@ -108,7 +109,7 @@ export function Sidebar() {
     const currentPath = window.location.pathname;
     if (path) return currentPath.includes(path);
     if (fav) return isFavorite;
-    if (!status && !currentStatus && !isFavorite) return currentPath === '/' || currentPath.endsWith(router.locale);
+    if (!status && !currentStatus && !isFavorite) return currentPath === '/' || currentPath.endsWith(locale);
     return currentStatus === status;
   };
 
