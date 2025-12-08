@@ -1,155 +1,55 @@
-"use client";
+import { useTranslations } from 'next-intl';
 
-import { useState } from "react";
-import { AuthLayout } from "@/components/auth/AuthLayout";
-import { Loader2, User } from "lucide-react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useTranslations } from "next-intl";
-import { API_URL } from "@/config";
+import Link from 'next/link';
 
-export default function LoginPage() {
-    const router = useRouter();
-    const t = useTranslations('Login');
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState<string | null>(null);
-    const [formData, setFormData] = useState({
-        email: "",
-        password: "",
-    });
+const LoginPage = () => {
+  const t = useTranslations('LoginPage');
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setLoading(true);
-        setError(null);
-        try {
-            const res = await fetch(`${API_URL}/api/auth/login`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-            });
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen bg-background">
+      <div className="w-full max-w-md p-8 space-y-8 bg-card rounded-lg shadow-lg">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-primary">{t('title')}</h1>
+        </div>
 
-            const data = await res.json();
+        <form className="space-y-6">
+          <div>
+            <label className="text-sm font-medium text-muted-foreground" htmlFor="email">
+              {t('email_label')}
+            </label>
+            <input
+              className="w-full px-3 py-2 mt-1 text-white bg-input border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              id="email"
+              placeholder={t('email_placeholder')}
+              type="email"
+            />
+          </div>
 
-            if (!res.ok) {
-                throw new Error(data.error || t('error_generic'));
-            }
+          <div>
+            <label className="text-sm font-medium text-muted-foreground" htmlFor="password">
+              {t('password_label')}
+            </label>
+            <input
+              className="w-full px-3 py-2 mt-1 text-white bg-input border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              id="password"
+              placeholder={t('password_placeholder')}
+              type="password"
+            />
+          </div>
 
-            // Store token
-            localStorage.setItem("token", data.token);
-            localStorage.setItem("user", JSON.stringify(data.user));
+          <button className="w-full py-2 font-bold text-white bg-primary rounded-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+            {t('submit')}
+          </button>
+        </form>
+        <div className="text-center text-muted-foreground">
+          {t('register_link_text')}{' '}
+          <Link className="font-medium text-primary hover:underline" href="/register">
+            {t('register_link')}
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-            // Notify other components
-            window.dispatchEvent(new Event("auth-change"));
-            window.dispatchEvent(new Event("list-updated"));
-
-            // Redirect
-            router.push("/");
-        } catch (error: any) {
-            setError(error.message);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    const handleDemoLogin = async () => {
-        setLoading(true);
-        setError(null);
-        try {
-            const res = await fetch(`${API_URL}/api/auth/login`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email: "BigDaddy", password: "password123" }), // Assuming this demo user exists
-            });
-
-            const data = await res.json();
-
-            if (!res.ok) {
-                throw new Error(data.error || "Demo Login fehlgeschlagen");
-            }
-
-            localStorage.setItem("token", data.token);
-            localStorage.setItem("user", JSON.stringify(data.user));
-            window.dispatchEvent(new Event("auth-change"));
-            window.dispatchEvent(new Event("list-updated"));
-            router.push("/");
-        } catch (error: any) {
-            setError(error.message);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    return (
-        <AuthLayout>
-            <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                    <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
-                        {t('email_label')}
-                    </label>
-                    <input
-                        required
-                        type="text"
-                        placeholder={t('email_placeholder')}
-                        className="w-full bg-slate-800/50 border border-slate-700/50 rounded-lg px-4 py-3.5 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 focus:bg-slate-800 transition-all"
-                        value={formData.email}
-                        onChange={e => setFormData({ ...formData, email: e.target.value })}
-                    />
-                </div>
-                <div>
-                    <div className="flex items-center justify-between mb-2">
-                        <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                            {t('password_label')}
-                        </label>
-                        <Link href="#" className="text-xs text-cyan-500 hover:text-cyan-400 transition-colors font-medium">
-                            {t('forgot_password')}
-                        </Link>
-                    </div>
-                    <input
-                        required
-                        type="password"
-                        placeholder={t('password_placeholder')}
-                        className="w-full bg-slate-800/50 border border-slate-700/50 rounded-lg px-4 py-3.5 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 focus:bg-slate-800 transition-all"
-                        value={formData.password}
-                        onChange={e => setFormData({ ...formData, password: e.target.value })}
-                    />
-                </div>
-
-                {error && (
-                    <div className="text-red-400 text-sm bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-center">
-                        {error}
-                    </div>
-                )}
-
-                <div className="pt-2 space-y-3">
-                    <button
-                        type="submit"
-                        disabled={loading}
-                        className="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-cyan-900/20 flex items-center justify-center"
-                    >
-                        {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : t('submit')}
-                    </button>
-
-                    <button
-                        type="button"
-                        onClick={handleDemoLogin}
-                        disabled={loading}
-                        className="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-xs uppercase tracking-wider border border-slate-700"
-                    >
-                        <User className="w-3.5 h-3.5" />
-                        <span>{t('demo_login')}</span>
-                    </button>
-                </div>
-            </form>
-
-            <div className="mt-8 text-center">
-                <p className="text-slate-500 text-xs">
-                    {t('no_account')}{" "}
-                    <Link href="/register" className="text-slate-400 hover:text-white transition-colors font-medium">
-                        {t('register_link')}
-                    </Link>
-                </p>
-            </div>
-        </AuthLayout>
-    );
-}
+export default LoginPage;
