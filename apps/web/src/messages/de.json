@@ -1,4 +1,15 @@
 {
+  "LoginPage": {
+    "title": "Anmelden",
+    "email_label": "E-Mail Adresse",
+    "email_placeholder": "deine.email@example.com",
+    "password_label": "Passwort",
+    "password_placeholder": "••••••••",
+    "submit": "Anmelden",
+    "register_link_text": "Noch kein Konto?",
+    "register_link": "Hier registrieren"
+  },
+  "RegisterPage": {
     "title": "Registrieren",
     "username_label": "Benutzername",
     "username_placeholder": "Dein Benutzername",
@@ -13,4 +24,5 @@
     "error_passwords_no_match": "Die Passwörter stimmen nicht überein.",
     "error_generic": "Registrierung fehlgeschlagen. Bitte versuche es erneut.",
     "success": "Registrierung erfolgreich! Du wirst jetzt weitergeleitet..."
+  }
 }
