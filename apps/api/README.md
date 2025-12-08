@@ -9,7 +9,10 @@ Use the following settings in your Railway service to deploy this API successful
 ### Build Settings
 
 - **Builder:** `Nixpacks` (oder `Railpack`)
-- **Build Command:** `npx turbo run build && pnpm --filter api deploy api-deploy`
+- **Build Command:** `npx turbo run build --force && pnpm --filter api deploy api-deploy`
+
+**Why `--force`?**
+The `--force` flag tells Turborepo to ignore its cache and run a fresh build every time. This prevents "stale cache" bugs where old code causes the deployment to fail, providing a more reliable deployment process.
 
 ### Start Settings
 
