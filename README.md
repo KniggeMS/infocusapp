@@ -2,7 +2,7 @@
 
 [![Status](https://img.shields.io/badge/status-in_development-green)](https://github.com/KniggeMS/infocusapp)
 [![GitHub Issues](https://img.shields.io/github/issues/KniggeMS/infocusapp)](https://github.com/KniggeMS/infocusapp/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/KniggeMS/infocusapp)](https://github.com/KniggeMS/infocusapp/pulls)
+[![GitHub Pull Requests](https.img.shields.io/github/issues-pr/KniggeMS/infocusapp)](https://github.com/KniggeMS/infocusapp/pulls)
 
 Infocus is a modern, all-in-one application to track your movies and TV shows. Keep a watchlist, manage your collections, and get personalized recommendations.
 
@@ -23,6 +23,7 @@ This project is a monorepo managed with `pnpm`.
 
 - [Node.js](https://nodejs.org/) (v18 or later)
 - [pnpm](https://pnpm.io/installation)
+- [Docker](https://www.docker.com/) (for database)
 
 ### Development
 
@@ -38,9 +39,23 @@ This project is a monorepo managed with `pnpm`.
     ```
 
 3.  **Set up environment variables:**
-    Create a `.env` file in the `apps/api` directory and add the necessary variables (e.g., database connection string, TMDB API key).
+    Create a `.env` file in the `apps/api` directory and add the necessary variables. You can use the `.env.example` as a template.
+    ```
+    DATABASE_URL="postgresql://postgres:postgres@localhost:5432/infocus"
+    TMDB_API_KEY="your_tmdb_api_key"
+    ```
 
-4.  **Run the development environment:**
+4.  **Start the database:**
+    ```bash
+    docker-compose up -d
+    ```
+
+5.  **Run database migrations:**
+    ```bash
+    pnpm db:migrate
+    ```
+
+6.  **Run the development environment:**
     This command will start the Next.js web app and the Express API concurrently.
     ```bash
     pnpm dev
@@ -51,9 +66,9 @@ This project is a monorepo managed with `pnpm`.
 - **Monorepo**: [pnpm](https://pnpm.io/)
 - **Frontend (`apps/web`)**: [Next.js](https://nextjs.org/), [React](https://reactjs.org/), [Tailwind CSS](https://tailwindcss.com/)
 - **Backend (`apps/api`)**: [Express](https://expressjs.com/), [Prisma](https://www.prisma.io/)
-- **Database (`packages/db`)**: [PostgreSQL](https://www.postgresql.org/)
+- **Database (`packages/db`)**: [PostgreSQL](https://www.postgresql.org/) with [Prisma](https://www.prisma.io/)
 - **UI (`packages/ui`)**: Shared React components
-- **Deployment**: [Vercel](https://vercel.com/) (Frontend), [Render/Heroku](https://render.com/) (Backend - TBD)
+- **Deployment**: [Vercel](https://vercel.com/) (Frontend), [Render](https://render.com/) (Backend)
 
 ## 🤝 Contributing
 
@@ -61,7 +76,7 @@ Contributions are welcome! Please feel free to open an issue or submit a pull re
 
 1.  Fork the Project
 2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature')
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4.  Push to the Branch (`git push origin feature/AmazingFeature`)
 5.  Open a Pull Request
 

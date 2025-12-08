@@ -5,8 +5,6 @@ import { AppLayout } from '@/components/AppLayout';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 
-// Force rebuild to invalidate Vercel cache
-
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
