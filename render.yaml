@@ -15,8 +15,8 @@ services:
     plan: free # Using the free instance type
     # Tell Render where the root of the pnpm monorepo is
     rootDir: .
-    # Build command for the monorepo, installs all dependencies
-    buildCommand: pnpm install --frozen-lockfile
+    # Build command: install dependencies AND then run the build script for the monorepo
+    buildCommand: pnpm install --frozen-lockfile && pnpm run build
     # Start command for the specific API service
     startCommand: pnpm --filter api start
     envVars:
