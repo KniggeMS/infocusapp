@@ -68,7 +68,7 @@ This project is a monorepo managed with `pnpm`.
 - **Backend (`apps/api`)**: [Express](https://expressjs.com/), [Prisma](https://www.prisma.io/)
 - **Database (`packages/db`)**: [PostgreSQL](https://www.postgresql.org/) with [Prisma](https://www.prisma.io/)
 - **UI (`packages/ui`)**: Shared React components
-- **Deployment**: [Vercel](https://vercel.com/) (Frontend), [Render](https://render.com/) (Backend)
+- **Deployment**: [Vercel](https://vercel.com/) (Frontend), [Railway](https://railway.app/) (Backend)
 
 ## 🤝 Contributing
 
@@ -76,7 +76,7 @@ Contributions are welcome! Please feel free to open an issue or submit a pull re
 
 1.  Fork the Project
 2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+3.  Commit your Changes (`git commit -m '''Add some AmazingFeature'''`)
 4.  Push to the Branch (`git push origin feature/AmazingFeature`)
 5.  Open a Pull Request
 
