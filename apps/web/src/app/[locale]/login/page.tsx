@@ -12,6 +12,7 @@ export default function LoginPage() {
     const router = useRouter();
     const t = useTranslations('Login');
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
     const [formData, setFormData] = useState({
         email: "",
         password: "",
@@ -20,6 +21,7 @@ export default function LoginPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
+        setError(null);
         try {
             const res = await fetch(`${API_URL}/api/auth/login`, {
                 method: "POST",
@@ -44,7 +46,7 @@ export default function LoginPage() {
             // Redirect
             router.push("/");
         } catch (error: any) {
-            alert(error.message);
+            setError(error.message);
         } finally {
             setLoading(false);
         }
@@ -52,6 +54,7 @@ export default function LoginPage() {
 
     const handleDemoLogin = async () => {
         setLoading(true);
+        setError(null);
         try {
             const res = await fetch(`${API_URL}/api/auth/login`, {
                 method: "POST",
@@ -71,7 +74,7 @@ export default function LoginPage() {
             window.dispatchEvent(new Event("list-updated"));
             router.push("/");
         } catch (error: any) {
-            alert(error.message);
+            setError(error.message);
         } finally {
             setLoading(false);
         }
@@ -111,6 +114,12 @@ export default function LoginPage() {
                         onChange={e => setFormData({ ...formData, password: e.target.value })}
                     />
                 </div>
+
+                {error && (
+                    <div className="text-red-400 text-sm bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-center">
+                        {error}
+                    </div>
+                )}
 
                 <div className="pt-2 space-y-3">
                     <button
