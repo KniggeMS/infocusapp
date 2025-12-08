@@ -1,14 +1,17 @@
 import express from 'express';
-
-// This comment is here to force a cache reset on Railway.
+import cors from 'cors';
+import { PrismaClient } from '@prisma/client';
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
+
+// Use CORS middleware
+app.use(cors());
 
 app.get('/', (req, res) => {
-  res.json({ status: 'API is running!' });
+  res.send('Hello from InfocusApp API!');
 });
 
 app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+  console.log(`API listening at http://localhost:${port}`);
 });
