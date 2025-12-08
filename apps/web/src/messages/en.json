@@ -7,27 +7,30 @@
         "edit": "Edit",
         "back": "Back",
         "family": "Family",
-        "watchlist": "Watchlist"
-    },
-    "common": {
-        "family": "Family",
-        "watchlist": "Watchlist"
+        "watchlist": "Watchlist",
+        "errorCreating": "Error during creation."
     },
     "Navigation": {
         "home": "Home",
+        "tasteAnalysis": "Taste Analysis",
         "lists": "Lists",
         "profile": "Profile",
         "login": "Login",
         "logout": "Logout",
+        "createAccount": "Create an account",
         "planned": "Planned",
         "watching": "Watching",
         "seen": "Watched",
         "favorites": "Favorites",
+        "customLists": "Custom Lists",
         "ai_tip": "AI Tip",
-        "new_rec": "New"
+        "new_rec": "New",
+        "addSomething": "Add something!",
+        "analyzeTaste": "I analyze your taste."
     },
     "Profile": {
         "title": "My Profile",
+        "edit": "Edit Profile",
         "info": "Info",
         "username": "Username",
         "email": "Email",
@@ -46,9 +49,9 @@
         "searchPlaceholder": "Search movies & TV shows...",
         "myLists": "My Lists",
         "createList": "Create List",
-        "newListPlaceholder": "List Name",
+        "newListPlaceholder": "List Name...",
         "noLists": "No lists found",
-        "create": "Create",
+        "create": "Add Item",
         "collection": "Your Collection",
         "planned": "Planned",
         "watching": "Watching",
@@ -82,5 +85,9 @@
         "no_account": "No account yet?",
         "register_link": "Register here",
         "error_generic": "Login failed"
+    },
+    "TasteAnalysis": {
+        "title": "Taste Analysis",
+        "comingSoon": "A detailed analysis of your taste in movies and series will be available here soon. Keep adding content to your lists!"
     }
 }
