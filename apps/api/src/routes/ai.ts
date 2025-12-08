@@ -1,8 +1,7 @@
 import express from "express";
 import { authenticate } from "../middleware/auth";
 import { getRecommendations, chatWithAI } from "../services/ai";
-import { prisma } from "@repo/db";
-import { MediaItem } from "@prisma/client";
+import { prisma, MediaItem } from "@repo/db";
 
 const router = express.Router();
 
