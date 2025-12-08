@@ -2,6 +2,7 @@ import express from "express";
 import { authenticate } from "../middleware/auth";
 import { getRecommendations, chatWithAI } from "../services/ai";
 import { prisma } from "@repo/db";
+import { MediaItem } from "@prisma/client";
 
 const router = express.Router();
 
@@ -17,7 +18,7 @@ router.get("/recommendations", authenticate, async (req, res) => {
         });
 
         // Map to MediaItem type expected by AI service
-        const mediaItems = items.map(item => ({
+        const mediaItems = items.map((item: MediaItem) => ({
             id: item.id,
             tmdbId: item.tmdbId,
             type: item.type === "TV" ? "SERIES" as any : "MOVIE" as any,
@@ -58,7 +59,7 @@ router.post("/chat", authenticate, async (req, res) => {
             take: 50
         });
 
-        const mediaItems = items.map(item => ({
+        const mediaItems = items.map((item: MediaItem) => ({
             id: item.id,
             tmdbId: item.tmdbId,
             type: item.type === "TV" ? "SERIES" as any : "MOVIE" as any,
