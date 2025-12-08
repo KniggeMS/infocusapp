@@ -11,5 +11,9 @@
   ],
   "exclude": [
     "node_modules"
+  ],
+  "references": [
+    { "path": "../../packages/db" },
+    { "path": "../../packages/types" }
   ]
 }
