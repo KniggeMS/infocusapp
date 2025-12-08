@@ -8,14 +8,17 @@ Use the following settings in your Railway service to deploy this API successful
 
 ### Build Settings
 
-- **Builder:** `Nixpacks` (oder `Railpack`)
-- **Build Command:** `npx turbo run build --force && pnpm --filter api deploy api-deploy`
+- **Builder:** `Nixpacks` (or `Railpack`)
+- **Build Command:** `npx turbo run build --force`
 
-**Why `--force`?**
-The `--force` flag tells Turborepo to ignore its cache and run a fresh build every time. This prevents "stale cache" bugs where old code causes the deployment to fail, providing a more reliable deployment process.
+**Explanation:**
+This command tells Turborepo to run the `build` script (which is `tsc`) in all packages, ignoring any cache (`--force`) to ensure a fresh, reliable build. This will create a `dist` folder inside `apps/api` containing the compiled JavaScript.
 
 ### Start Settings
 
-- **Start Command:** `node api-deploy/index.js`
+- **Start Command:** `node apps/api/dist/index.js`
+
+**Explanation:**
+This command directly executes the compiled entry point of your application. The `pnpm install` at the beginning of the deployment process makes all dependencies available to this script.
 
 **Important:** Ensure the `Root Directory` setting is **empty** to run commands from the project root.
