@@ -3,8 +3,9 @@
 
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { Film, LogIn } from 'lucide-react';
+import { LogIn } from 'lucide-react'; // Film-Icon wird nicht mehr gebraucht
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import Image from 'next/image'; // Next.js Image-Komponente für Optimierung
 
 const LoginPage = () => {
   const t = useTranslations('LoginPage');
@@ -15,7 +16,7 @@ const LoginPage = () => {
       <div
         className="absolute inset-0 w-full h-full bg-center bg-cover"
         style={{
-          backgroundImage: "url('/login-bg.jpg')", // PLATZHALTER: Bitte das Hintergrundbild bereitstellen
+          backgroundImage: "url('/login-bg.jpg')", // Verwendung des finalen Bildes
           opacity: 0.3,
           zIndex: 0,
         }}
@@ -29,8 +30,13 @@ const LoginPage = () => {
       <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-md p-8">
         {/* Logo */}
         <div className="mb-6 text-center">
-            {/* PLATZHALTER: Bitte das Logo bereitstellen */}
-          <Film className="w-16 h-16 mx-auto mb-4 text-cyan-400" />
+            <Image 
+                src="/logo.svg" // Verwendung des finalen Logos
+                alt="CineLog Logo"
+                width={64}
+                height={64}
+                className="mx-auto mb-4"
+            />
           <h1 className="text-5xl font-bold text-white">{t('title')}</h1>
           <p className="mt-2 text-slate-300">{t('subtitle')}</p>
         </div>
@@ -66,7 +72,6 @@ const LoginPage = () => {
                     placeholder={t('password_placeholder')}
                     type="password"
                 />
-                {/* Das "Preview" Feature wird später hinzugefügt */}
               </div>
             </div>
 

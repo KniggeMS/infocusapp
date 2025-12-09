@@ -10,6 +10,7 @@ export function LanguageSwitcher({ variant = "default" }: { variant?: "default" 
     const pathname = usePathname();
 
     const nextLocale = locale === "de" ? "en" : "de";
+    const nextLocaleName = locale === "de" ? "English" : "Deutsch";
 
     const toggleLanguage = () => {
         router.replace(pathname, { locale: nextLocale });
@@ -27,7 +28,7 @@ export function LanguageSwitcher({ variant = "default" }: { variant?: "default" 
             className={`${baseStyles} ${variants[variant]}`}
         >
             <Languages className="w-3.5 h-3.5" />
-            <span>{nextLocale.toUpperCase()}</span>
+            <span>{nextLocaleName}</span>
         </button>
     );
 }
