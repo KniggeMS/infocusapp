@@ -64,7 +64,7 @@
         "forgot_password": "Forgot your password?",
         "submit": "Login",
         "demo_login": "Demo-Login (BigDaddy)",
-        "no_account": "Don't have an account?",
+        "register_link_text": "Don't have an account?",
         "register_link": "Register here",
         "error_generic": "Login failed"
     },
