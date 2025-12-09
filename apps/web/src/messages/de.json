@@ -1,35 +1,17 @@
+
 {
-    "Common": {
-        "loading": "Laden...",
-        "save": "Speichern",
-        "cancel": "Abbrechen",
-        "delete": "Löschen",
-        "edit": "Bearbeiten",
-        "back": "Zurück",
-        "family": "Familie",
-        "watchlist": "Merkliste",
-        "errorCreating": "Fehler beim Erstellen."
-    },
-    "Navigation": {
-        "home": "Startseite",
-        "tasteAnalysis": "Geschmacksanalyse",
-        "lists": "Listen",
+    "Navbar": {
+        "home": "Home",
         "profile": "Profil",
-        "login": "Anmelden",
-        "logout": "Abmelden",
-        "createAccount": "Konto erstellen",
-        "planned": "Geplant",
-        "watching": "Am Schauen",
-        "seen": "Gesehen",
-        "favorites": "Favoriten",
-        "customLists": "Eigene Listen",
-        "ai_tip": "KI-Tipp",
-        "new_rec": "Neu",
-        "addSomething": "Füge etwas hinzu!",
-        "analyzeTaste": "Ich analysiere deinen Geschmack."
+        "taste_analysis": "Geschmacksanalyse",
+        "logout": "Abmelden"
     },
-    "Profile": {
-        "title": "Mein Profil",
+    "Footer": {
+        "created_by": "Erstellt von",
+        "source_code": "Quellcode"
+    },
+    "ProfilePage": {
+        "title": "Profil",
         "edit": "Profil bearbeiten",
         "info": "Info",
         "username": "Benutzername",
@@ -73,7 +55,7 @@
         "import_confirm": "Auswahl importieren",
         "import_preview": "Vorschau"
     },
-    "Login": {
+    "LoginPage": {
         "title": "Anmelden",
         "email_label": "Benutzername / E-Mail Adresse",
         "email_placeholder": "Benutzername",

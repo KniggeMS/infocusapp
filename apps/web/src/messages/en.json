@@ -1,55 +1,37 @@
+
 {
-    "Common": {
-        "loading": "Loading...",
-        "save": "Save",
-        "cancel": "Cancel",
-        "delete": "Delete",
-        "edit": "Edit",
-        "back": "Back",
-        "family": "Family",
-        "watchlist": "Watchlist",
-        "errorCreating": "Error during creation."
-    },
-    "Navigation": {
+    "Navbar": {
         "home": "Home",
-        "tasteAnalysis": "Taste Analysis",
-        "lists": "Lists",
         "profile": "Profile",
-        "login": "Login",
-        "logout": "Logout",
-        "createAccount": "Create an account",
-        "planned": "Planned",
-        "watching": "Watching",
-        "seen": "Watched",
-        "favorites": "Favorites",
-        "customLists": "Custom Lists",
-        "ai_tip": "AI Tip",
-        "new_rec": "New",
-        "addSomething": "Add something!",
-        "analyzeTaste": "I analyze your taste."
+        "taste_analysis": "Taste Analysis",
+        "logout": "Logout"
     },
-    "Profile": {
-        "title": "My Profile",
+    "Footer": {
+        "created_by": "Created by",
+        "source_code": "Source Code"
+    },
+    "ProfilePage": {
+        "title": "Profile",
         "edit": "Edit Profile",
         "info": "Info",
         "username": "Username",
-        "email": "Email",
+        "email": "E-Mail",
         "memberSince": "Member since",
-        "generateAvatar": "Generate New (AI)",
+        "generateAvatar": "Generate new Avatar (AI)",
         "uploadImage": "Upload Image",
         "changePassword": "Change Password",
         "currentPassword": "Current Password",
         "newPassword": "New Password",
         "confirmPassword": "Confirm",
-        "passwordChanged": "Password successfully changed!",
-        "passwordMismatch": "New passwords do not match."
+        "passwordChanged": "Password changed successfully!",
+        "passwordMismatch": "The new passwords do not match."
     },
     "Home": {
         "welcome": "Welcome back",
-        "searchPlaceholder": "Search movies & TV shows...",
+        "searchPlaceholder": "Search for movies & series...",
         "myLists": "My Lists",
         "createList": "Create List",
-        "newListPlaceholder": "List Name...",
+        "newListPlaceholder": "List name...",
         "noLists": "No lists found",
         "create": "Add Item",
         "collection": "Your Collection",
@@ -66,23 +48,23 @@
         "smart_import": "Smart Import",
         "import_desc": "Paste your list here (Format: Title;Type;Platform;Notes).",
         "import_placeholder": "\"Blackout\";Movie;;\"Proximity Film\"",
-        "api_key_missing": "TMDB API Key missing",
-        "no_match": "No match",
+        "api_key_missing": "TMDB API key is missing",
+        "no_match": "No match found",
         "analyzing": "Analyzing...",
         "analyze": "Analyze",
-        "import_confirm": "Import Selection",
+        "import_confirm": "Import selection",
         "import_preview": "Preview"
     },
-    "Login": {
+    "LoginPage": {
         "title": "Login",
         "email_label": "Username / Email Address",
         "email_placeholder": "Username",
         "password_label": "Password",
         "password_placeholder": "••••••••",
-        "forgot_password": "Forgot password?",
+        "forgot_password": "Forgot your password?",
         "submit": "Login",
-        "demo_login": "Demo Login (BigDaddy)",
-        "no_account": "No account yet?",
+        "demo_login": "Demo-Login (BigDaddy)",
+        "no_account": "Don't have an account?",
         "register_link": "Register here",
         "error_generic": "Login failed"
     },
