@@ -8,7 +8,8 @@
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
         "clean": "turbo run clean && rm -rf node_modules",
         "db:push": "turbo run generate && pnpm --filter db db:push",
-        "start": "pnpm --filter api start"
+        "start": "pnpm --filter api start",
+        "postinstall": "pnpm --filter @repo/db generate"
     },
     "devDependencies": {
         "turbo": "latest",
