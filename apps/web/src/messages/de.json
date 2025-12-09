@@ -47,7 +47,7 @@
     "Import": {
         "smart_import": "Intelligenter Import",
         "import_desc": "Füge deine Liste hier ein (Format: Titel;Typ;Platform;Notizen).",
-        "import_placeholder": "\"Blackout\";Film;;\"Proximity Film\"",
+        "import_placeholder": ""Blackout";Film;;"Proximity Film"",
         "api_key_missing": "TMDB API-Schlüssel fehlt",
         "no_match": "Keine Übereinstimmung",
         "analyzing": "Analysiere...",
@@ -56,14 +56,15 @@
         "import_preview": "Vorschau"
     },
     "LoginPage": {
-        "title": "Anmelden",
-        "email_label": "Benutzername / E-Mail Adresse",
+        "title": "CineLog",
+        "subtitle": "Melde dich an, um deine Watchlist zu verwalten.",
+        "email_label": "BENUTZERNAME / E-MAIL ADRESSE",
         "email_placeholder": "Benutzername",
-        "password_label": "Passwort",
+        "password_label": "PASSWORT",
         "password_placeholder": "••••••••",
         "forgot_password": "Passwort vergessen?",
         "submit": "Anmelden",
-        "demo_login": "Demo-Login (BigDaddy)",
+        "demo_login": "DEMO LOGIN (BIGDADDY)",
         "register_link_text": "Noch kein Konto?",
         "register_link": "Hier registrieren",
         "error_generic": "Anmeldung fehlgeschlagen"

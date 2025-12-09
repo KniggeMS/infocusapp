@@ -1,10 +1,10 @@
-# Infocus - Your Personal Media Watchlist
+# CineLog - Your Personal Media Watchlist
 
 [![Status](https://img.shields.io/badge/status-in_development-green)](https://github.com/KniggeMS/infocusapp)
 [![GitHub Issues](https://img.shields.io/github/issues/KniggeMS/infocusapp)](https://github.com/KniggeMS/infocusapp/issues)
 [![GitHub Pull Requests](https.img.shields.io/github/issues-pr/KniggeMS/infocusapp)](https://github.com/KniggeMS/infocusapp/pulls)
 
-Infocus is a modern, all-in-one application to track your movies and TV shows. Keep a watchlist, manage your collections, and get personalized recommendations.
+CineLog is a modern, all-in-one application to track your movies and TV shows. Keep a watchlist, manage your collections, and get personalized recommendations.
 
 ## ✨ Features
 
@@ -41,7 +41,7 @@ This project is a monorepo managed with `pnpm`.
 3.  **Set up environment variables:**
     Create a `.env` file in the `apps/api` directory and add the necessary variables. You can use the `.env.example` as a template.
     ```
-    DATABASE_URL="postgresql://postgres:postgres@localhost:5432/infocus"
+    DATABASE_URL="postgresql://postgres:postgres@localhost:5432/cinelog"
     TMDB_API_KEY="your_tmdb_api_key"
     ```
 
