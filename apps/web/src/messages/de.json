@@ -1,4 +1,3 @@
-
 {
     "Navbar": {
         "home": "Home",
@@ -42,12 +41,16 @@
         "subtitle": "Verwalte deine Filme und Serien an einem Ort.",
         "newest": "Neuste",
         "emptyTitle": "Noch nichts hier.",
-        "emptyLink": "Füge etwas hinzu!"
+        "emptyLink": "Füge etwas hinzu!",
+        "favorites_subtitle": "Deine liebsten Filme und Serien.",
+        "planned_subtitle": "Was du noch sehen möchtest.",
+        "watching_subtitle": "Was du gerade schaust.",
+        "watched_subtitle": "Was du bereits gesehen hast."
     },
     "Import": {
         "smart_import": "Intelligenter Import",
         "import_desc": "Füge deine Liste hier ein (Format: Titel;Typ;Platform;Notizen).",
-        "import_placeholder": ""Blackout";Film;;"Proximity Film"",
+        "import_placeholder": "\"Blackout\";Film;;\"Proximity Film\"",
         "api_key_missing": "TMDB API-Schlüssel fehlt",
         "no_match": "Keine Übereinstimmung",
         "analyzing": "Analysiere...",

@@ -1,4 +1,3 @@
-
 {
     "Navbar": {
         "home": "Home",
@@ -42,12 +41,16 @@
         "subtitle": "Manage your movies and series in one place.",
         "newest": "Newest",
         "emptyTitle": "Nothing here yet.",
-        "emptyLink": "Add something!"
+        "emptyLink": "Add something!",
+        "favorites_subtitle": "Your favorite movies and series.",
+        "planned_subtitle": "What you plan to watch.",
+        "watching_subtitle": "What you are currently watching.",
+        "watched_subtitle": "What you have already watched."
     },
     "Import": {
         "smart_import": "Smart Import",
         "import_desc": "Paste your list here (Format: Title;Type;Platform;Notes).",
-        "import_placeholder": ""Blackout";Movie;;"Proximity Film"",
+        "import_placeholder": "\"Blackout\";Movie;;\"Proximity Film\"",
         "api_key_missing": "TMDB API key is missing",
         "no_match": "No match found",
         "analyzing": "Analyzing...",

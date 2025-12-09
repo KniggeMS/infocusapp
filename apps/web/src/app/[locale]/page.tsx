@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 
 import { ArrowUpDown, Film, MessageCircle } from "lucide-react";
@@ -61,10 +61,10 @@ export default function Home() {
     };
 
     const getSubtitle = () => {
-        if (isFavorite) return "Deine liebsten Filme und Serien.";
-        if (status === "PLANNED") return "Was du noch sehen möchtest.";
-        if (status === "WATCHING") return "Was du gerade schaust.";
-        if (status === "WATCHED") return "Was du bereits gesehen hast.";
+        if (isFavorite) return t('favorites_subtitle');
+        if (status === "PLANNED") return t('planned_subtitle');
+        if (status === "WATCHING") return t('watching_subtitle');
+        if (status === "WATCHED") return t('watched_subtitle');
         return t('subtitle');
     };
 
