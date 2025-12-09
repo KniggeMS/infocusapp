@@ -1,4 +1,30 @@
 {
+    "Common": {
+        "username": "Benutzername",
+        "email": "E-Mail",
+        "password": "Passwort",
+        "confirm_password": "Passwort bestätigen",
+        "new_password": "Neues Passwort",
+        "firstname": "Vorname",
+        "lastname": "Nachname",
+        "save": "Speichern"
+    },
+    "Auth": {
+        "login_subtitle": "Melde dich an, um deine Watchlist zu verwalten.",
+        "register_subtitle": "Starte noch heute mit der Verwaltung deiner Watchlist.",
+        "reset_subtitle": "Setze dein Passwort zurück.",
+        "forgot_password": "Passwort vergessen?",
+        "login_button": "Anmelden",
+        "register_button": "Konto erstellen",
+        "reset_password": "Passwort zurücksetzen",
+        "password_reset_success": "Passwort erfolgreich zurückgesetzt! Du wirst in Kürze weitergeleitet.",
+        "back_to_login": "Zurück zum Login",
+        "switch_to_register": "Noch kein Konto? Hier registrieren",
+        "switch_to_login": "Bereits ein Konto? Hier anmelden",
+        "generate_avatar": "Avatar generieren",
+        "generating": "Generiere...",
+        "or_upload": "oder hochladen"
+    },
     "Navbar": {
         "home": "Home",
         "profile": "Profil",
@@ -13,15 +39,11 @@
         "title": "Profil",
         "edit": "Profil bearbeiten",
         "info": "Info",
-        "username": "Benutzername",
-        "email": "E-Mail",
         "memberSince": "Mitglied seit",
         "generateAvatar": "Neuen Avatar (KI) generieren",
         "uploadImage": "Bild hochladen",
         "changePassword": "Passwort ändern",
         "currentPassword": "Aktuelles Passwort",
-        "newPassword": "Neues Passwort",
-        "confirmPassword": "Bestätigen",
         "passwordChanged": "Passwort erfolgreich geändert!",
         "passwordMismatch": "Die neuen Passwörter stimmen nicht überein."
     },
@@ -57,35 +79,6 @@
         "analyze": "Analysieren",
         "import_confirm": "Auswahl importieren",
         "import_preview": "Vorschau"
-    },
-    "LoginPage": {
-        "title": "CineLog",
-        "subtitle": "Melde dich an, um deine Watchlist zu verwalten.",
-        "email_label": "BENUTZERNAME / E-MAIL ADRESSE",
-        "email_placeholder": "Benutzername oder E-Mail",
-        "password_label": "PASSWORT",
-        "password_placeholder": "••••••••",
-        "forgot_password": "Passwort vergessen?",
-        "submit": "Anmelden",
-        "demo_login": "DEMO LOGIN (BIGDADDY)",
-        "register_link_text": "Noch kein Konto?",
-        "register_link": "Hier registrieren",
-        "error_generic": "Anmeldung fehlgeschlagen"
-    },
-    "RegisterPage": {
-        "title": "Konto erstellen",
-        "subtitle": "Starte noch heute mit der Verwaltung deiner Watchlist.",
-        "username_label": "Benutzername",
-        "username_placeholder": "Wähle einen Benutzernamen",
-        "email_label": "E-Mail Adresse",
-        "email_placeholder": "deine@email.com",
-        "password_label": "Passwort",
-        "password_placeholder": "Mindestens 8 Zeichen",
-        "confirm_password_label": "Passwort bestätigen",
-        "confirm_password_placeholder": "Passwort erneut eingeben",
-        "submit": "Konto erstellen",
-        "login_link_text": "Bereits ein Konto?",
-        "login_link": "Hier anmelden"
     },
     "TasteAnalysis": {
         "title": "Geschmacksanalyse",
