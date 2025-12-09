@@ -3,7 +3,15 @@ import { Inter } from 'next/font/google';
 import '../globals.css';
 import { AppLayout } from '@/components/AppLayout';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+
+// Statically import messages to ensure they are included in the build
+import enMessages from '../../messages/en.json';
+import deMessages from '../../messages/de.json';
+
+const allMessages = {
+  en: enMessages,
+  de: deMessages
+};
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -12,14 +20,16 @@ export const metadata: Metadata = {
   description: 'Cross-platform media tracking',
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
   params: { locale },
 }: Readonly<{
   children: React.ReactNode;
   params: { locale: string };
 }>) {
-  const messages = await getMessages();
+  // Select the correct messages based on the locale
+  // Type assertion ensures TypeScript that locale is a valid key
+  const messages = allMessages[locale as keyof typeof allMessages];
 
   return (
     <html lang={locale}>
