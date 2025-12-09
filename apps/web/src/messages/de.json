@@ -62,7 +62,7 @@
         "title": "CineLog",
         "subtitle": "Melde dich an, um deine Watchlist zu verwalten.",
         "email_label": "BENUTZERNAME / E-MAIL ADRESSE",
-        "email_placeholder": "Benutzername",
+        "email_placeholder": "Benutzername oder E-Mail",
         "password_label": "PASSWORT",
         "password_placeholder": "••••••••",
         "forgot_password": "Passwort vergessen?",
@@ -71,6 +71,21 @@
         "register_link_text": "Noch kein Konto?",
         "register_link": "Hier registrieren",
         "error_generic": "Anmeldung fehlgeschlagen"
+    },
+    "RegisterPage": {
+        "title": "Konto erstellen",
+        "subtitle": "Starte noch heute mit der Verwaltung deiner Watchlist.",
+        "username_label": "Benutzername",
+        "username_placeholder": "Wähle einen Benutzernamen",
+        "email_label": "E-Mail Adresse",
+        "email_placeholder": "deine@email.com",
+        "password_label": "Passwort",
+        "password_placeholder": "Mindestens 8 Zeichen",
+        "confirm_password_label": "Passwort bestätigen",
+        "confirm_password_placeholder": "Passwort erneut eingeben",
+        "submit": "Konto erstellen",
+        "login_link_text": "Bereits ein Konto?",
+        "login_link": "Hier anmelden"
     },
     "TasteAnalysis": {
         "title": "Geschmacksanalyse",

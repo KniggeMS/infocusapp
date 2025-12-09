@@ -62,7 +62,7 @@
         "title": "CineLog",
         "subtitle": "Sign in to manage your watchlist.",
         "email_label": "USERNAME / EMAIL ADDRESS",
-        "email_placeholder": "Username",
+        "email_placeholder": "Username or Email",
         "password_label": "PASSWORD",
         "password_placeholder": "••••••••",
         "forgot_password": "Forgot password?",
@@ -71,6 +71,21 @@
         "register_link_text": "Don't have an account?",
         "register_link": "Register here",
         "error_generic": "Login failed"
+    },
+    "RegisterPage": {
+        "title": "Create Account",
+        "subtitle": "Get started managing your watchlist today.",
+        "username_label": "Username",
+        "username_placeholder": "Choose a username",
+        "email_label": "Email Address",
+        "email_placeholder": "your@email.com",
+        "password_label": "Password",
+        "password_placeholder": "At least 8 characters",
+        "confirm_password_label": "Confirm Password",
+        "confirm_password_placeholder": "Enter password again",
+        "submit": "Create Account",
+        "login_link_text": "Already have an account?",
+        "login_link": "Login here"
     },
     "TasteAnalysis": {
         "title": "Taste Analysis",
