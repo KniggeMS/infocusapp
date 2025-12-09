@@ -61,6 +61,64 @@ This project is a monorepo managed with `pnpm`.
     pnpm dev
     ```
 
+## 🚂 Deploying the API to Railway
+
+Deploying a monorepo backend requires careful configuration. Follow these steps to ensure a successful deployment of the `api` service on Railway.
+
+### 1. Railway Service Configuration
+
+- **Root Directory**: Leave this empty. Railway will detect the monorepo root.
+- **Build Command**:
+  ```bash
+  pnpm turbo run build --filter=api
+  ```
+- **Start Command**:
+  ```bash
+  pnpm --filter api start
+  ```
+
+### 2. File Configuration (Verified)
+
+These changes have been made to ensure the build and start processes work correctly in the Railway environment.
+
+**`packages/db/prisma/schema.prisma`**
+
+Ensure the `generator` block specifies the output path for the Prisma client. This is crucial for the monorepo setup.
+
+```prisma
+generator client {
+  provider = "prisma-client-js"
+  output   = "../../../node_modules/@prisma/client"
+}
+```
+
+**`apps/api/package.json`**
+
+- The `build` script must first generate the Prisma client and then run the TypeScript compiler (`tsc`).
+- The `start` script must run database migrations before starting the application.
+- The `prisma.schema` path must be specified to allow Railway to find it from the `api` workspace.
+
+```json
+{
+  "scripts": {
+    "build": "prisma generate && tsc",
+    "start": "prisma migrate deploy && node dist/index.js"
+  },
+  "prisma": {
+    "schema": "../../packages/db/prisma/schema.prisma"
+  }
+}
+```
+
+### 3. Environment Variables
+
+Make sure the following environment variables are set in your Railway service:
+
+- `DATABASE_URL`: Your connection string to the PostgreSQL database.
+- `TMDB_API_KEY`: Your API key for The Movie Database.
+
+With these settings, every `git push` to your main branch should trigger a successful deployment on Railway.
+
 ## 🛠️ Tech Stack
 
 - **Monorepo**: [pnpm](https://pnpm.io/)
