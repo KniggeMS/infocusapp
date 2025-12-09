@@ -7,7 +7,8 @@
         "lint": "turbo run lint",
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
         "clean": "turbo run clean && rm -rf node_modules",
-        "db:push": "turbo run generate && pnpm --filter db db:push"
+        "db:push": "turbo run generate && pnpm --filter db db:push",
+        "start": "pnpm --filter api start"
     },
     "devDependencies": {
         "turbo": "latest",
