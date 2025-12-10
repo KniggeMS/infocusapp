@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { useAuth } from '../../../contexts/AuthContext';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import { useTranslations } from 'next-intl';
@@ -14,11 +15,20 @@ const AuthPage: React.FC = () => {
   const { language, setLanguage } = useLanguage();
   const tAuth = useTranslations('Auth');
   const tCommon = useTranslations('Common');
+  const pathname = usePathname();
 
   const [view, setView] = useState<AuthView>('login');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+
+  useEffect(() => {
+    if (pathname.includes('/register')) {
+      setView('register');
+    } else {
+      setView('login');
+    }
+  }, [pathname]);
 
   // Form State
   const [username, setUsername] = useState('');

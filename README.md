@@ -112,10 +112,11 @@ generator client {
 
 ### 3. Environment Variables
 
-Make sure the following environment variables are set in your Railway service:
+Make sure the following environment variables are set in your Railway `api` service:
 
-- `DATABASE_URL`: Your connection string to the PostgreSQL database.
-- `TMDB_API_KEY`: Your API key for The Movie Database.
+- **`DATABASE_URL`**: Your connection string to the PostgreSQL database provided by Railway.
+  - **Important**: For Railway deployments, you must append `?sslmode=require` to the end of the database URL to ensure a secure connection. For example: `postgresql://user:pass@host:port/db?sslmode=require`.
+- **`TMDB_API_KEY`**: Your API key for The Movie Database. This is a **required** variable for the API to function.
 
 With these settings, every `git push` to your main branch should trigger a successful deployment on Railway.
 
