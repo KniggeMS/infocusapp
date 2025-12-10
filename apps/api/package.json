@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "ts-node-dev src/index.ts",
     "build": "tsc",
-    "start": "prisma migrate deploy && node dist/index.js",
+    "start": "prisma migrate resolve --applied 0_init && prisma migrate deploy && node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "prisma": {
