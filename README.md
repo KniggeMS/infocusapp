@@ -1,10 +1,10 @@
-# Infocus - Your Personal Media Watchlist
+# CineLog - Your Personal Media Watchlist
 
 [![Status](https://img.shields.io/badge/status-in_development-green)](https://github.com/KniggeMS/infocusapp)
 [![GitHub Issues](https://img.shields.io/github/issues/KniggeMS/infocusapp)](https://github.com/KniggeMS/infocusapp/issues)
 [![GitHub Pull Requests](https.img.shields.io/github/issues-pr/KniggeMS/infocusapp)](https://github.com/KniggeMS/infocusapp/pulls)
 
-Infocus is a modern, all-in-one application to track your movies and TV shows. Keep a watchlist, manage your collections, and get personalized recommendations.
+CineLog is a modern, all-in-one application to track your movies and TV shows. Keep a watchlist, manage your collections, and get personalized recommendations.
 
 ## ✨ Features
 
@@ -41,7 +41,7 @@ This project is a monorepo managed with `pnpm`.
 3.  **Set up environment variables:**
     Create a `.env` file in the `apps/api` directory and add the necessary variables. You can use the `.env.example` as a template.
     ```
-    DATABASE_URL="postgresql://postgres:postgres@localhost:5432/infocus"
+    DATABASE_URL="postgresql://postgres:postgres@localhost:5432/cinelog"
     TMDB_API_KEY="your_tmdb_api_key"
     ```
 
@@ -112,10 +112,11 @@ generator client {
 
 ### 3. Environment Variables
 
-Make sure the following environment variables are set in your Railway service:
+Make sure the following environment variables are set in your Railway `api` service:
 
-- `DATABASE_URL`: Your connection string to the PostgreSQL database.
-- `TMDB_API_KEY`: Your API key for The Movie Database.
+- **`DATABASE_URL`**: Your connection string to the PostgreSQL database provided by Railway.
+  - **Important**: For Railway deployments, you must append `?sslmode=require` to the end of the database URL to ensure a secure connection. For example: `postgresql://user:pass@host:port/db?sslmode=require`.
+- **`TMDB_API_KEY`**: Your API key for The Movie Database. This is a **required** variable for the API to function.
 
 With these settings, every `git push` to your main branch should trigger a successful deployment on Railway.
 

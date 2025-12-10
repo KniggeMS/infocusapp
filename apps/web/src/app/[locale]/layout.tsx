@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google';
 import '../globals.css';
 import { AppLayout } from '@/components/AppLayout';
 import { NextIntlClientProvider } from 'next-intl';
+import { AuthProvider } from '@/contexts/AuthContext'; // Import AuthProvider
+import { LanguageProvider } from '@/contexts/LanguageContext'; // Import LanguageProvider
 
 // Statically import messages to ensure they are included in the build
 import enMessages from '../../messages/en.json';
@@ -27,15 +29,18 @@ export default function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
-  // Select the correct messages based on the locale
-  // Type assertion ensures TypeScript that locale is a valid key
   const messages = allMessages[locale as keyof typeof allMessages];
 
   return (
     <html lang={locale}>
       <body className={inter.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <AppLayout>{children}</AppLayout>
+          <LanguageProvider>
+            <AuthProvider>
+              {/* We remove AppLayout from here, as it will be handled on a per-page basis */}
+              {children}
+            </AuthProvider>
+          </LanguageProvider>
         </NextIntlClientProvider>
       </body>
     </html>

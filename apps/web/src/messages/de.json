@@ -1,5 +1,30 @@
-
 {
+    "Common": {
+        "username": "Benutzername",
+        "email": "E-Mail",
+        "password": "Passwort",
+        "confirm_password": "Passwort bestätigen",
+        "new_password": "Neues Passwort",
+        "firstname": "Vorname",
+        "lastname": "Nachname",
+        "save": "Speichern"
+    },
+    "Auth": {
+        "login_subtitle": "Melde dich an, um deine Watchlist zu verwalten.",
+        "register_subtitle": "Starte noch heute mit der Verwaltung deiner Watchlist.",
+        "reset_subtitle": "Setze dein Passwort zurück.",
+        "forgot_password": "Passwort vergessen?",
+        "login_button": "Anmelden",
+        "register_button": "Konto erstellen",
+        "reset_password": "Passwort zurücksetzen",
+        "password_reset_success": "Passwort erfolgreich zurückgesetzt! Du wirst in Kürze weitergeleitet.",
+        "back_to_login": "Zurück zum Login",
+        "switch_to_register": "Noch kein Konto? Hier registrieren",
+        "switch_to_login": "Bereits ein Konto? Hier anmelden",
+        "generate_avatar": "Avatar generieren",
+        "generating": "Generiere...",
+        "or_upload": "oder hochladen"
+    },
     "Navbar": {
         "home": "Home",
         "profile": "Profil",
@@ -14,15 +39,11 @@
         "title": "Profil",
         "edit": "Profil bearbeiten",
         "info": "Info",
-        "username": "Benutzername",
-        "email": "E-Mail",
         "memberSince": "Mitglied seit",
         "generateAvatar": "Neuen Avatar (KI) generieren",
         "uploadImage": "Bild hochladen",
         "changePassword": "Passwort ändern",
         "currentPassword": "Aktuelles Passwort",
-        "newPassword": "Neues Passwort",
-        "confirmPassword": "Bestätigen",
         "passwordChanged": "Passwort erfolgreich geändert!",
         "passwordMismatch": "Die neuen Passwörter stimmen nicht überein."
     },
@@ -42,7 +63,11 @@
         "subtitle": "Verwalte deine Filme und Serien an einem Ort.",
         "newest": "Neuste",
         "emptyTitle": "Noch nichts hier.",
-        "emptyLink": "Füge etwas hinzu!"
+        "emptyLink": "Füge etwas hinzu!",
+        "favorites_subtitle": "Deine liebsten Filme und Serien.",
+        "planned_subtitle": "Was du noch sehen möchtest.",
+        "watching_subtitle": "Was du gerade schaust.",
+        "watched_subtitle": "Was du bereits gesehen hast."
     },
     "Import": {
         "smart_import": "Intelligenter Import",
@@ -54,19 +79,6 @@
         "analyze": "Analysieren",
         "import_confirm": "Auswahl importieren",
         "import_preview": "Vorschau"
-    },
-    "LoginPage": {
-        "title": "Anmelden",
-        "email_label": "Benutzername / E-Mail Adresse",
-        "email_placeholder": "Benutzername",
-        "password_label": "Passwort",
-        "password_placeholder": "••••••••",
-        "forgot_password": "Passwort vergessen?",
-        "submit": "Anmelden",
-        "demo_login": "Demo-Login (BigDaddy)",
-        "register_link_text": "Noch kein Konto?",
-        "register_link": "Hier registrieren",
-        "error_generic": "Anmeldung fehlgeschlagen"
     },
     "TasteAnalysis": {
         "title": "Geschmacksanalyse",

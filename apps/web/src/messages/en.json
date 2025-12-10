@@ -1,5 +1,30 @@
-
 {
+    "Common": {
+        "username": "Username",
+        "email": "Email",
+        "password": "Password",
+        "confirm_password": "Confirm Password",
+        "new_password": "New Password",
+        "firstname": "First Name",
+        "lastname": "Last Name",
+        "save": "Save"
+    },
+    "Auth": {
+        "login_subtitle": "Sign in to manage your watchlist.",
+        "register_subtitle": "Get started managing your watchlist today.",
+        "reset_subtitle": "Reset your password.",
+        "forgot_password": "Forgot password?",
+        "login_button": "Login",
+        "register_button": "Create Account",
+        "reset_password": "Reset Password",
+        "password_reset_success": "Password reset successfully! You will be redirected shortly.",
+        "back_to_login": "Back to Login",
+        "switch_to_register": "Don't have an account? Register here",
+        "switch_to_login": "Already have an account? Login here",
+        "generate_avatar": "Generate Avatar",
+        "generating": "Generating...",
+        "or_upload": "or upload"
+    },
     "Navbar": {
         "home": "Home",
         "profile": "Profile",
@@ -14,15 +39,11 @@
         "title": "Profile",
         "edit": "Edit Profile",
         "info": "Info",
-        "username": "Username",
-        "email": "E-Mail",
         "memberSince": "Member since",
         "generateAvatar": "Generate new Avatar (AI)",
         "uploadImage": "Upload Image",
         "changePassword": "Change Password",
         "currentPassword": "Current Password",
-        "newPassword": "New Password",
-        "confirmPassword": "Confirm",
         "passwordChanged": "Password changed successfully!",
         "passwordMismatch": "The new passwords do not match."
     },
@@ -42,7 +63,11 @@
         "subtitle": "Manage your movies and series in one place.",
         "newest": "Newest",
         "emptyTitle": "Nothing here yet.",
-        "emptyLink": "Add something!"
+        "emptyLink": "Add something!",
+        "favorites_subtitle": "Your favorite movies and series.",
+        "planned_subtitle": "What you plan to watch.",
+        "watching_subtitle": "What you are currently watching.",
+        "watched_subtitle": "What you have already watched."
     },
     "Import": {
         "smart_import": "Smart Import",
@@ -54,19 +79,6 @@
         "analyze": "Analyze",
         "import_confirm": "Import selection",
         "import_preview": "Preview"
-    },
-    "LoginPage": {
-        "title": "Login",
-        "email_label": "Username / Email Address",
-        "email_placeholder": "Username",
-        "password_label": "Password",
-        "password_placeholder": "••••••••",
-        "forgot_password": "Forgot your password?",
-        "submit": "Login",
-        "demo_login": "Demo-Login (BigDaddy)",
-        "register_link_text": "Don't have an account?",
-        "register_link": "Register here",
-        "error_generic": "Login failed"
     },
     "TasteAnalysis": {
         "title": "Taste Analysis",

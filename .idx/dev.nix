@@ -6,11 +6,8 @@
 
   # Use https://search.nixos.org/packages to find packages
   packages = [
-    # pkgs.go
-    # pkgs.python311
-    # pkgs.python311Packages.pip
     pkgs.nodejs_20
-    # pkgs.nodePackages.nodemon
+    pkgs.nodePackages_latest.npm
   ];
 
   # Sets environment variables in the workspace
@@ -21,20 +18,19 @@
       # "vscodevim.vim"
     ];
 
-    # Enable previews
+    # Enable previews and define the web preview
     previews = {
       enable = true;
       previews = {
-        # web = {
-        #   # Example: run "npm run dev" with PORT set to IDX's defined port for previews,
-        #   # and show it in IDX's web preview panel
-        #   command = ["npm" "run" "dev"];
-        #   manager = "web";
-        #   env = {
-        #     # Environment variables to set for your server
-        #     PORT = "$PORT";
-        #   };
-        # };
+        web = {
+          # Command to run for the web preview
+          command = ["npm" "run" "dev"];
+          manager = "web";
+          env = {
+            # Set the PORT environment variable for the server
+            PORT = "$PORT";
+          };
+        };
       };
     };
 
@@ -42,13 +38,12 @@
     workspace = {
       # Runs when a workspace is first created
       onCreate = {
-        # Example: install JS dependencies from NPM
-        # npm-install = "npm install";
+        # Install JS dependencies from NPM
+        npm-install = "npm install";
       };
       # Runs when the workspace is (re)started
       onStart = {
-        # Example: start a background task to watch and re-build backend code
-        # watch-backend = "npm run watch-backend";
+        # No tasks needed on start for now
       };
     };
   };
