@@ -38,9 +38,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const register = async (details: any, pass: string) => {
     console.log('Attempting to register:', { details, pass });
     await new Promise(resolve => setTimeout(resolve, 500));
-    console.log('Dummy registration successful!');
-    // In a real app, you might want to automatically log the user in
-    // setIsAuthenticated(true);
+    console.log('Dummy registration successful! Logging user in.');
+    // In a real app, you would have more complex logic here.
+    // For now, we'll just log them in.
+    setIsAuthenticated(true);
   };
 
   // Dummy reset password function
