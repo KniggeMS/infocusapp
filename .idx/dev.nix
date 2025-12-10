@@ -8,7 +8,16 @@
   packages = [
     pkgs.nodejs_20
     pkgs.nodePackages_latest.npm
-  ];
+    pkgs.docker
+    pkgs.openssl
+      ];
+
+      # --- HIER EINFÜGEN ---
+  services.postgres = {
+    enable = true;
+    enableTcp = true;
+  };
+  # ---------------------
 
   # Sets environment variables in the workspace
   env = {};
@@ -16,6 +25,8 @@
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
     extensions = [
       # "vscodevim.vim"
+      "Prisma.prisma"
+    
     ];
 
     # Enable previews and define the web preview
