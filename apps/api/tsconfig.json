@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "tsconfig-custom/base.json",
   "compilerOptions": {
     "outDir": "./dist",
     "types": [
@@ -13,7 +13,11 @@
     "node_modules"
   ],
   "references": [
-    { "path": "../../packages/db" },
-    { "path": "../../packages/types" }
+    {
+      "path": "../../packages/db"
+    },
+    {
+      "path": "../../packages/types"
+    }
   ]
 }
